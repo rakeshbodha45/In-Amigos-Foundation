@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inamigos Foundation | Empowering Communities</title>
+    <style>
+        /* 1. GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #111;
+        }
+
+        /* 2. NAVIGATION BAR */
+        header {
+            background-color: #ffffff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff5a5f;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5a5f;
+        }
+
+        /* 3. HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1593113565214-80afcb4a45d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 5%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background-color: #ff5a5f;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0484d;
+        }
+
+        /* 4. ABOUT & INITIATIVES (GRID) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fcfcfc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        /* 5. CONTACT SECTION (YOUR CODE - IMPROVED) */
+        .framer-contact-section {
+            background-color: #fcfcfc;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .contact-info p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info .icon {
+            color: #ff5a5f;
+            margin-right: 12px;
+            font-weight: bold;
+            width: 20px;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 20px;
+            color: #ff5a5f;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: #ff5a5f;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #ff5a5f;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #e0484d;
+        }
+
+        /* 6. FOOTER */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        /* 7. RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* In a real app, you'd add a hamburger menu here */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">Inamigos Foundation</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#initiatives">Initiatives</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Making a Difference, Together</h1>
+        <p>Join hands with the Inamigos Foundation to empower communities, support education, and create sustainable livelihoods in Chhattisgarh and beyond.</p>
+        <a href="#contact" class="btn-primary">Get Involved</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="grid-container" style="display: block; text-align: center; max-width: 800px;">
+            <p>The Inamigos Foundation is dedicated to driving positive social change. Founded on the belief that collective action can transform lives, we work tirelessly at the grassroots level to bring about meaningful impact in rural and semi-urban communities.</p>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section id="initiatives" style="background-color: #f9f9f9;">
+        <h2 class="section-title">Our Initiatives</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>📚 Education for All</h3>
+                <p>Providing basic education and resources to underprivileged children to secure a better future.</p>
+            </div>
+            <div class="card">
+                <h3>🌱 Sustainable Living</h3>
+                <p>Promoting eco-friendly practices and supporting local agriculture for sustainable community growth.</p>
+            </div>
+            <div class="card">
+                <h3>❤️ Health & Wellness</h3>
+                <p>Organizing medical camps and spreading awareness about hygiene and nutrition in rural areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Your Provided Snippet) -->
+    <section id="contact" class="framer-contact-section">
+        <div class="contact-grid">
+            
+            <!-- Address & Meta Column -->
+            <div class="contact-info">
+                <h2>Reach Us</h2>
+                <p><span class="icon">📍</span> Ward No. 5, Gram Post, Sipat Ujwal Nagar, Bilaspur, Chhattisgarh - 495555</p>
+                <p><span class="icon">✉️</span> inamigosfoundation@gmail.com</p>
+                <p><span class="icon">📞</span> +91 626 730 9902</p>
+                
+                <div class="social-links">
+                    <!-- Added rel="noopener noreferrer" for security -->
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                </div>
+            </div>
+
+            <!-- Fully Functional Email Form -->
+            <div class="contact-form-container">
+                <form action="https://web3forms.com/submit" method="POST" class="contact-form">
+                    
+                    <!-- ⚠️ IMPORTANT: Get your free key at web3forms.com & replace the value below -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
+                    <!-- Honeypot for Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <!-- Form Fields with aria-labels for accessibility -->
+                    <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" aria-label="Your Email Address" required>
+                    <textarea name="message" placeholder="How would you like to help?" rows="5" aria-label="Your Message" required></textarea>
+                    
+                    <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks">
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Inamigos Foundation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
